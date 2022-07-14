@@ -8,8 +8,6 @@ namespace VendingMachine
 {
     internal class Snacks : Product
     {
-        public Snacks()
-        {
-        }
+
     }
 }

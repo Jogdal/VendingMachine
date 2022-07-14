@@ -8,5 +8,6 @@ namespace VendingMachine
 {
     internal class Candy : Product
     {
+        
     }
 }

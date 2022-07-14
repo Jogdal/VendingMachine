@@ -8,5 +8,7 @@ namespace VendingMachine
 {
     internal class Drinks : Product
     {
+      
+     
     }
 }
