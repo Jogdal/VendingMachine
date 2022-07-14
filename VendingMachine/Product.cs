@@ -14,6 +14,8 @@ namespace VendingMachine
         public string ProductName { get; set; }
         public int Pris { get; set; }
 
+        public string typeOfProduct { get; set; }
+
         public void ShowProductsNamePris()
         {
             //Console.WriteLine("Produkten " +  " kostar " + + " kronor");
