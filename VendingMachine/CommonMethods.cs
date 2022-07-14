@@ -31,6 +31,8 @@ namespace VendingMachine
         public static void PressAnyKey()
         {
             Console.Write("Press any key to continue!"); Console.ReadKey();
+
+
         }
 
         public static void ExamineProduct(Product product)
