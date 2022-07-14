@@ -14,8 +14,6 @@ namespace TestVendingMachine
         public void CheckDepositValue()
         {
             bool sut = CommonMethods.CheckDeposit(1000);
-           
-
             Assert.True(sut);
         }
         [Fact]
