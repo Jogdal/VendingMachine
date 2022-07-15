@@ -12,11 +12,5 @@ namespace VendingMachine
         public void ShowAll();
         public void Purchase();
         public void EndTransaction();
-
     }
-
-
-
-
-
 }

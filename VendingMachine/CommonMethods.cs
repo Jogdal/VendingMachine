@@ -57,31 +57,15 @@ namespace VendingMachine
             if (product.Pris < 10) Console.Write(" ");
 
             Console.Write(product.Pris + "kr");
-            Console.WriteLine("  Varugrupp: " + product.typeOfProduct);
+
+            Console.WriteLine("  Varugrupp: " + product.TypeOfProduct);
         }
 
 
         public static void UseProduct(Product product)
         {
-            if (product.typeOfProduct == "Drink")
-            {
-                Console.WriteLine("The drink you bought is ready to drink, well cooled!");
-            }
-            if (product.typeOfProduct == "Food")
-            {
-                Console.WriteLine("Eat the food slowly and enjoy the good taste!");
-            }
-            if (product.typeOfProduct == "Candy")
-            {
-                Console.WriteLine("Candy is not what the dentist recommends!");
-            }
-            if (product.typeOfProduct == "Snacks")
-            {
-                Console.WriteLine("Have some snacks to keep your energy up :D!");
-            }
+
         }
-
-
 
 
         public static bool CheckMinBalance(int Saldo)

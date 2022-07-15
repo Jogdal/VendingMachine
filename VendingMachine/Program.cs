@@ -7,7 +7,6 @@ VM vm = new VM();
 
 
 
-
 void PrintMenu()
 {
     System.Console.Clear();

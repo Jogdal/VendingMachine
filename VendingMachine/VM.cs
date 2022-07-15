@@ -167,7 +167,9 @@ namespace VendingMachine
                                 Saldo -= product.Pris;
                                 Console.WriteLine();
 
-                                CommonMethods.UseProduct(product);
+                                product.Use();
+
+                                // CommonMethods.UseProduct(product);
 
                                 aPurchasedItems[nrOfPurchases] = product.ProductName;
                                 nrOfPurchases++;
@@ -178,7 +180,6 @@ namespace VendingMachine
                                 Console.WriteLine("Sorry mate, your out of cash, Get a job and put in some more money!");
                             }
                         }
-
 
                     }
                 }
@@ -199,12 +200,11 @@ namespace VendingMachine
             }
             else
             {
-                Console.WriteLine("Sorry mate, you need to deposit some more cash before you can purchase anything, Get yourself an haircut and get job!!!");
+                Console.WriteLine("Sorry mate, you need to deposit some more cash before you can purchase anything, Get yourself an haircut and get job!");
                 Console.WriteLine();
                 CommonMethods.PressAnyKey();    
             }
         }
-
 
         public void EndTransaction()
         {
@@ -265,8 +265,6 @@ namespace VendingMachine
                 Saldo -= (nrOfCoins * 1);
             }
 
-
-
             Console.ReadLine();
         }
 
@@ -284,99 +282,34 @@ namespace VendingMachine
             CommonMethods.PressAnyKey();
         }
 
-    public void InitInventory()
+        public void InitInventory()
         {
-            Drinks myCola = new Drinks();
-            myCola.ID = 1;
-            myCola.ProductName = "Cola";
-            myCola.Pris = 10;
-            myCola.typeOfProduct = "Drink";
-
-            Drinks myFanta = new Drinks();
-            myFanta.ID = 2;
-            myFanta.ProductName = "Fanta";
-            myFanta.Pris = 10;
-            myFanta.typeOfProduct = "Drink";
-
-            Drinks myLoka = new Drinks();
-            myLoka.ID = 3;  
-            myLoka.ProductName = "Loka";
-            myLoka.Pris = 10;
-            myLoka.typeOfProduct = "Drink";
-
-
-            Food mySnickers = new Food();
-            mySnickers.ID = 4;
-            mySnickers.ProductName = "Snickers";
-            mySnickers.Pris = 15;
-            mySnickers.typeOfProduct = "Food";
-
-            Food myTwix = new Food();
-            myTwix.ID = 5;
-            myTwix.ProductName = "Twix";
-            myTwix.Pris = 15;
-            myTwix.typeOfProduct = "Food";
-
-            Food myJapp = new Food();
-            myJapp.ID = 6;
-            myJapp.ProductName = "Japp";
-            myJapp.Pris = 15;
-            myJapp.typeOfProduct = "Food";
-
-            Food mySalamieBrie = new Food();
-            mySalamieBrie.ID = 7;
-            mySalamieBrie.ProductName = "Salamie Brie Sandwich";
-            mySalamieBrie.Pris = 15;
-            mySalamieBrie.typeOfProduct = "Food";
-
-
-            Candy myLakrits = new Candy();
-            myLakrits.ID = 8;
-            myLakrits.ProductName = "Lakris";
-            myLakrits.Pris = 10;
-            myLakrits.typeOfProduct = "Candy";
-
-            Candy myAhlgrens = new Candy();
-            myAhlgrens.ID = 9;
-            myAhlgrens.ProductName = "Ahlgrens Bilar";
-            myAhlgrens.Pris = 25;
-            myAhlgrens.typeOfProduct = "Candy";
-
-            Candy myDjungelvral = new Candy();
-            myDjungelvral.ID = 10;   
-            myDjungelvral.ProductName = "Djungelvrål";
-            myDjungelvral.Pris = 10;
-            myDjungelvral.typeOfProduct = "Candy";
-
-            Candy mySalmiakbalk = new Candy();
-            mySalmiakbalk.ID = 11;
-            mySalmiakbalk.ProductName = "Salmiak balk";
-            mySalmiakbalk.Pris = 3;
-            mySalmiakbalk.typeOfProduct = "Candy";
-
-
-
-
-            myProductList.Add(myCola);
-            myProductList.Add(myFanta);
-            myProductList.Add(myLoka);
-            myProductList.Add(mySnickers);
-            myProductList.Add(myTwix);
-            myProductList.Add(myJapp);
-            myProductList.Add(mySalamieBrie);
-            myProductList.Add(myLakrits);
-            myProductList.Add(myAhlgrens);
-            myProductList.Add(myDjungelvral);
-            myProductList.Add(mySalmiakbalk);
-
-
-
+            Drinks myDrink = new Drinks(1, "Cola", 10, "Drink");
+            myProductList.Add(myDrink);
+            myDrink = new Drinks(2, "Fanta", 10, "Drink");
+            myProductList.Add(myDrink);
+            myDrink = new Drinks(3, "Loka", 10, "Drink");
+            myProductList.Add(myDrink);
             
+            Snacks mySnacks  = new Snacks(4, "Snickers", 15, "Snacks");
+            myProductList.Add(mySnacks);
+            mySnacks = new Snacks(5, "Twix", 15, "Snacks");
+            myProductList.Add(mySnacks);
+            mySnacks = new Snacks(6, "Japp", 15, "Snacks");
+            myProductList.Add(mySnacks);
 
+            Food myFood = new Food(7, "Salamie Brie", 35, "Food");
+            myProductList.Add(myFood);
+
+            Candy myCandy = new Candy(8,"Lakrits", 15, "Candy");
+            myProductList.Add(myCandy);
+            myCandy = new Candy(9, "Ahlgrens Bilar", 18, "Candy");
+            myProductList.Add(myCandy);
+            myCandy = new Candy(10, "Djungelvral", 12, "Candy");
+            myProductList.Add(myCandy);
+            myCandy = new Candy(11, "Salmiak Balk", 3, "Candy");
+            myProductList.Add(myCandy);
 
         }
-
-
-
     }
 }
